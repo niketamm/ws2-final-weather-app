@@ -1,4 +1,4 @@
-//adding date
+//adding current location date
     let dateoutput = document.querySelector("#date");
         function formatDate() {
         let now = new Date();
@@ -49,9 +49,9 @@
             let date2Sentnce = `Current Time ${hour}:${minute}`;
             return date2Sentnce;
         }
-
-    dateoutput.innerHTML = formatDate();
-    time.innerHTML = timeFunction();
+//output of date and time
+dateoutput.innerHTML = formatDate();
+time.innerHTML = timeFunction();
 
 
 //default display weather is tokyo
