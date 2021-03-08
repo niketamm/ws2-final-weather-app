@@ -1,3 +1,42 @@
+//default display weather is tokyo
+    function formatPlaceDefault(event) 
+    {
+        let apiKey = `ea83478d04ea758c32daab15e512ea29`;
+        let degreeSystem = `metric`;
+        let cityName=`Tokyo`
+        let url = `https://api.openweathermap.org/data/2.5/weather?`;
+        let urlWeatherDefault = `${url}q=${cityName}&appid=${apiKey}&units=${degreeSystem}`;
+        axios.get(urlWeatherDefault).then(dataWeatherDefault);
+    }
+
+    function dataWeatherDefault(response)
+    {
+        console.log(response.data);
+
+        //for city
+        let htmlCityValue = response.data.name;
+        let htmlCity = document.querySelector("#city");
+        htmlCity.innerHTML = htmlCityValue;
+
+        //degree
+        let tempRound = Math.round(response.data.main.temp);
+        let tempChange = document.querySelector("#degree-today");
+        tempChange.innerHTML = tempRound;
+
+        //humidity
+        let humRound = Math.round(response.data.main.humidity);
+        let humChange = document.querySelector("#humidity");
+        humChange.innerHTML = `Humidity ${humRound} %`;
+
+        //windspeed
+        let windRound = response.data.wind.speed;
+        let windChange = document.querySelector("#wind-speed");
+        windChange.innerHTML = `Wind speed ${windRound} m/s`;
+    }
+
+formatPlaceDefault();
+
+
 //location api for searched city
 
     function formatPlace(event) 
