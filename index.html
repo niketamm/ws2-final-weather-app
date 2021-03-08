@@ -13,32 +13,38 @@
 <script src="src/script.js"></script>
 <body>
 <div class="container">
-        <div class="input-group" id="searchEngine">
+    <form  id="searchEngine">
+        <div class="input-group">
             <input 
                 type="text" 
                 class="form-control" 
                 placeholder="enter city"
                 aria-label="Recipient's username with two button addons" 
-                id="search-text"></input>
+                id="search-text">
+            </input>
+
              <input 
                 type="submit" 
                 value="Search" 
                 class="btn btn-outline-secondary" 
-                type="button">
+                type="button"
+                id="search-button">
             </input>
+
             <input 
                 type="submit" 
                 value="Current location"  
                 class="btn btn-outline-secondary" 
-                type="button">
+                type="button"
+                id="search-location">
             </input>
         </div>
+    </form>
         
-
     <h1 id="date"></h1>
     <p id="date2"></p>
     
-<h2>
+ <h2>
         
     It is
          <div id="degree-today">
@@ -46,27 +52,26 @@
         </div>
     ℃ in 
         <div id="city"> 
-        city</div>
-</h2>
+        city
+        </div>
+ </h2>
     
     
+ <h6>
     
-<h6>
-            
-    <div id="humidity"> 
-        Humidity 40%
-    </div>
+    Humidity
+        <div id="humidity"> 
+        40%
+        </div>
     
-    
-    
-    <div id="wind-speed">
-        
-        Wind speed 2 m/s 
-    </div>
+    Wind speed
+        <div id="wind-speed">
+        2 m/s 
+        </div>
 
-</h6>
+ </h6>
     
-<br>
+ <br>
 
  <div class="container">
 

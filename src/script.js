@@ -1,12 +1,19 @@
 //location api
-let apiDomain=`https://api.openweathermap.org/data/2.5/weather?`;
-let city=``;
-let key=`ea83478d04ea758c32daab15e512ea29`;
-let system=`metric`;
 
-let sourceSearch=`${apiDomain}q=${city}&appid=${key}&unit=${system}`;
-let sourcelocation=`${apiDomain}q=${city}&appid=${key}&unit=${system}`
-api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
+function formatPlace(event) {
+  event.preventDefault();
+  let result = document.querySelector("#search-text");
+  let cityName = result.value;
+  let apiKey = `ea83478d04ea758c32daab15e512ea29`;
+  let degreeSystem = `metric`;
+  let url = `https://api.openweathermap.org/data/2.5/weather?`;
+  let urlWeather = `${url}q=${cityName}&appid=${apiKey}&units=${degreeSystem}`;
+  axios.get(urlWeather).then(dataWeather);
+}
+
+
+
+
 
 //for seaerched city
 function dataWeather(response)
@@ -35,6 +42,30 @@ function dataWeather(response)
  }
 
 //for current location
+
+function getLocation() {
+  navigator.geolocation.getCurrentPosition(formatLocation);
+}
+
+function formatLocation(position) {
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let apiKey = `ea83478d04ea758c32daab15e512ea29`;
+  let degreeSystem = `metric`;
+  let url = `https://api.openweathermap.org/data/2.5/weather?`;
+  let urlWeather22 = `${url}lat=${lat}&lon=${lon}&appid=${apiKey}&units=${degreeSystem}`;
+  axios.get(urlWeather22).then(currentLocation);
+}
+
+let searchForm = document.querySelector("#searchEngine,#search-button");
+searchForm.addEventListener("submit", formatPlace);
+
+let locationForm = document.querySelector("#search-location");
+locationForm.addEventListener("click", getLocation);
+
+
+
+
 
 
 axios.get(sourcelocation).then(currentLocation);
