@@ -1,23 +1,18 @@
-//location api
+//location api for searched city
 
-function formatPlace(event) {
-  event.preventDefault();
-  //let result = document.querySelector("#search-text");
-  //let cityName = result.value;
-  //let result = document.querySelector("#search-text");
-  let cityName = `tokyo`;
-  let apiKey = `ea83478d04ea758c32daab15e512ea29`;
-  let degreeSystem = `metric`;
-  let url = `https://api.openweathermap.org/data/2.5/weather?`;
-  let urlWeather = `${url}q=${cityName}&appid=${apiKey}&units=${degreeSystem}`;
-  axios.get(urlWeather).then(dataWeather);
-}
+    function formatPlace(event) 
+    {
+        event.preventDefault();
+        let result = document.querySelector("#search-text");
+        let cityName = result.value;
+        let apiKey = `ea83478d04ea758c32daab15e512ea29`;
+        let degreeSystem = `metric`;
+        let url = `https://api.openweathermap.org/data/2.5/weather?`;
+        let urlWeather = `${url}q=${cityName}&appid=${apiKey}&units=${degreeSystem}`;
+        axios.get(urlWeather).then(dataWeather);
+    }
 
-
-
-
-
-//for seaerched city
+//output for seaerched city
     function dataWeather(response)
     {
         console.log(response.data);
@@ -43,7 +38,10 @@ function formatPlace(event) {
         windChange.innerHTML = `Wind speed ${windRound} m/s`;
     }
 
-//for current location
+    let searchForm = document.querySelector("#searchEngine,#search-button");
+    searchForm.addEventListener("submit",formatPlace);
+
+//api for current location
 
     function getLocation() 
     {
@@ -61,36 +59,33 @@ function formatPlace(event) {
         axios.get(urlWeather22).then(currentLocation);
     }
 
-let searchForm = document.querySelector("#searchEngine,#search-button");
-searchForm.addEventListener("submit",formatPlace);
 
-let locationForm = document.querySelector("#search-location");
-locationForm.addEventListener("click",getLocation);
+//output for current location
 
+    function currentLocation(response) 
+    {
+        console.log(response.data);
 
+        //city
+        let htmlCityValue = response.data.name;
+        let htmlCity = document.querySelector("#city");
+        htmlCity.innerHTML = htmlCityValue;
 
-function currentLocation(response) 
- {
-    console.log(response.data);
+        //degree-today
+        let tempRound = Math.round(response.data.main.temp);
+        let tempChange = document.querySelector("#degree-today");
+        tempChange.innerHTML = tempRound;
 
-  //city
+        //humidity
+        let humRound = Math.round(response.data.main.humidity);
+        let humChange = document.querySelector("#humidity");
+        humChange.innerHTML = `Humidity ${humRound} %`;
 
-  let htmlCityValue = response.data.name;
-  let htmlCity = document.querySelector("#city");
-  htmlCity.innerHTML = htmlCityValue;
+        //wind-speed
+        let windRound = response.data.wind.speed;
+        let windChange = document.querySelector("#wind-speed");
+        windChange.innerHTML = `Wind speed ${windRound} m/s`;
+    }
 
-  //degree-today
-  let tempRound = Math.round(response.data.main.temp);
-  let tempChange = document.querySelector("#degree-today");
-  tempChange.innerHTML = tempRound;
-
-  //humidity
-  let humRound = Math.round(response.data.main.humidity);
-  let humChange = document.querySelector("#humidity");
-  humChange.innerHTML = `Humidity ${humRound} %`;
-
-  //wind-speed
-  let windRound = response.data.wind.speed;
-  let windChange = document.querySelector("#wind-speed");
-  windChange.innerHTML = `Wind speed ${windRound} m/s`;
- }
+    let locationForm = document.querySelector("#search-location");
+    locationForm.addEventListener("click",getLocation);
