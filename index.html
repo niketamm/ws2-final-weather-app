@@ -11,7 +11,15 @@
 </head>
 <script src="src/script.js"></script>
 <body>
-    <div class="container">
+<div class="container">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="enter city"
+             aria-label="Recipient's username with two button addons">
+             <input type="submit" value="Search" class="btn btn-outline-secondary" type="button"></input>
+            <input type="submit" value="Current location"  class="btn btn-outline-secondary" type="button"></input>
+        </div>
+        
+
     <form id="searchEngine">
         <input type="text" placeholder="enter city and press enter" id="search-text" class="search" />
         <input type="submit" value="Search" class="searchTwo" id="search-button" />
@@ -21,9 +29,9 @@
     <p id="date2"></p>
     
     <h2>It is </h2>
-    <h2 id="degree-today">10</h2>
+    <h2 id="degree-today">degree-today</h2>
     <h2>℃ in </h2>
-    <h2 id="city">Tokyo</h2>
+    <h2 id="city"> city</h2>
     
     
     
@@ -32,6 +40,37 @@
     
     
     <p id="wind-speed">Wind speed 2 m/s</p><br>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-sm-1"> h1 </div>
+                <div class="col-6 col-sm-1"> h2 </div>
+                <div class="col-6 col-sm-1"> h3</div>
+                <div class="col-6 col-sm-1"> h4</div>
+                <div class="col-6 col-sm-1"> h5</div>
+        
+                <!-- Force next columns to break to new line -->
+            <div class="w-100"></div>
+
+                <div class="col-6 col-sm-1"> h1 </div>
+                <div class="col-6 col-sm-1"> h2 </div>
+                <div class="col-6 col-sm-1"> h3</div>
+                <div class="col-6 col-sm-1"> h4</div>
+                <div class="col-6 col-sm-1"> h5</div>
+
+            <div class="w-100"></div>
+                <div class="col-6 col-sm-1"> h1 </div>
+                <div class="col-6 col-sm-1"> h2 </div>
+                <div class="col-6 col-sm-1"> h3</div>
+                <div class="col-6 col-sm-1"> h4</div>
+                <div class="col-6 col-sm-1"> h5</div>
+        
+        </div>
+
+
+
+
+
     
 </div>
 </body>
