@@ -7,65 +7,92 @@
     <title>Weather App</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 </head>
 <script src="src/script.js"></script>
 <body>
 <div class="container">
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="enter city"
-             aria-label="Recipient's username with two button addons">
-             <input type="submit" value="Search" class="btn btn-outline-secondary" type="button"></input>
-            <input type="submit" value="Current location"  class="btn btn-outline-secondary" type="button"></input>
+        <div class="input-group" id="searchEngine">
+            <input 
+                type="text" 
+                class="form-control" 
+                placeholder="enter city"
+                aria-label="Recipient's username with two button addons" 
+                id="search-text"></input>
+             <input 
+                type="submit" 
+                value="Search" 
+                class="btn btn-outline-secondary" 
+                type="button">
+            </input>
+            <input 
+                type="submit" 
+                value="Current location"  
+                class="btn btn-outline-secondary" 
+                type="button">
+            </input>
         </div>
         
 
-    <form id="searchEngine">
-        <input type="text" placeholder="enter city and press enter" id="search-text" class="search" />
-        <input type="submit" value="Search" class="searchTwo" id="search-button" />
-        <input type="submit" value="Current location" class="searchTwo" id="search-location" />
-    </form>
     <h1 id="date"></h1>
     <p id="date2"></p>
     
-    <h2>It is </h2>
-    <h2 id="degree-today">degree-today</h2>
-    <h2>℃ in </h2>
-    <h2 id="city"> city</h2>
-    
-    
-    
-    <p id="humidity">Humidity 40%</p>
-    
-    
-    
-    <p id="wind-speed">Wind speed 2 m/s</p><br>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-6 col-sm-1"> h1 </div>
-                <div class="col-6 col-sm-1"> h2 </div>
-                <div class="col-6 col-sm-1"> h3</div>
-                <div class="col-6 col-sm-1"> h4</div>
-                <div class="col-6 col-sm-1"> h5</div>
+<h2>
         
-                <!-- Force next columns to break to new line -->
-            <div class="w-100"></div>
-
-                <div class="col-6 col-sm-1"> h1 </div>
-                <div class="col-6 col-sm-1"> h2 </div>
-                <div class="col-6 col-sm-1"> h3</div>
-                <div class="col-6 col-sm-1"> h4</div>
-                <div class="col-6 col-sm-1"> h5</div>
-
-            <div class="w-100"></div>
-                <div class="col-6 col-sm-1"> h1 </div>
-                <div class="col-6 col-sm-1"> h2 </div>
-                <div class="col-6 col-sm-1"> h3</div>
-                <div class="col-6 col-sm-1"> h4</div>
-                <div class="col-6 col-sm-1"> h5</div>
-        
+    It is
+         <div id="degree-today">
+        degree-today
         </div>
+    ℃ in 
+        <div id="city"> 
+        city</div>
+</h2>
+    
+    
+    
+<h6>
+            
+    <div id="humidity"> 
+        Humidity 40%
+    </div>
+    
+    
+    
+    <div id="wind-speed">
+        
+        Wind speed 2 m/s 
+    </div>
+
+</h6>
+    
+<br>
+
+ <div class="container">
+
+    <div class="row">
+        <div class="col-6 col-sm-1"> h1 </div>
+        <div class="col-6 col-sm-1"> h2 </div>
+        <div class="col-6 col-sm-1"> h3</div>
+        <div class="col-6 col-sm-1"> h4</div>
+        <div class="col-6 col-sm-1"> h5</div>
+        
+     <div class="w-100"></div>
+
+        <div class="col-6 col-sm-1"> h1 </div>
+        <div class="col-6 col-sm-1"> h2 </div>
+        <div class="col-6 col-sm-1"> h3</div>
+        <div class="col-6 col-sm-1"> h4</div>
+        <div class="col-6 col-sm-1"> h5</div>
+
+     <div class="w-100"></div>
+        <div class="col-6 col-sm-1"> h1 </div>
+        <div class="col-6 col-sm-1"> h2 </div>
+        <div class="col-6 col-sm-1"> h3</div>
+        <div class="col-6 col-sm-1"> h4</div>
+        <div class="col-6 col-sm-1"> h5</div>
+    </div>
+ </div>
 
 
 
