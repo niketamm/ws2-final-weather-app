@@ -1,3 +1,59 @@
+//adding date
+    let dateoutput = document.querySelector("#date");
+        function formatDate() {
+        let now = new Date();
+
+        let dayList = 
+        [
+        `Sunday`,
+        `Monday`,
+        `Tueday`,
+        `Wednesday`,
+        `Thursday`,
+        `Friday`,
+        `Saturday`
+        ];
+
+        let monthList = 
+        [
+        `January`,
+        `February`,
+        `March`,
+        `April`,
+        `May`,
+        `June`,
+        `July`,
+        `August`,
+        `September`,
+        `October`,
+        `November`,
+        `December`
+        ];
+
+  let day = dayList[now.getDay()];
+  let month = monthList[now.getMonth()];
+  let date = now.getDate();
+
+  let dateSentence = `${day} ${month} ${date}`;
+  return dateSentence;
+}
+
+//adding time
+
+    let time = document.querySelector("#time");
+        function timeFunction() 
+        {
+            let now = new Date();
+            let hour = now.getHours();
+            let minute = now.getMinutes();
+            let date2Sentnce = `Current Time ${hour}:${minute}`;
+            return date2Sentnce;
+        }
+
+    dateoutput.innerHTML = formatDate();
+    time.innerHTML = timeFunction();
+
+
 //default display weather is tokyo
     function formatPlaceDefault(event) 
     {
