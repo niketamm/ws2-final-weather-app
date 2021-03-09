@@ -93,6 +93,11 @@ time.innerHTML = timeFunction();
         let windChange = document.querySelector("#wind-speed");
         windChange.innerHTML = `Wind speed ${windRound} m/s`;
 
+        //sky
+        let skyChange = document.querySelector("#sky");
+        skyChange.innerHTML = `${response.data.weather[0].description}`;
+
+
         //icon
         let weatherIcon= document.querySelector("#large-image")
         weatherIcon.setAttribute("src" ,`https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
@@ -141,6 +146,10 @@ formatPlaceDefault();
         let windRound = response.data.wind.speed;
         let windChange = document.querySelector("#wind-speed");
         windChange.innerHTML = `Wind speed ${windRound} m/s`;
+
+        //sky
+        let skyChange = document.querySelector("#sky");
+        skyChange.innerHTML = `${response.data.weather[0].description}`;
 
         //icon
         let weatherIcon= document.querySelector("#large-image")
@@ -197,6 +206,10 @@ formatPlaceDefault();
         let windChange = document.querySelector("#wind-speed");
         windChange.innerHTML = `Wind speed ${windRound} m/s`;
 
+        //sky
+        let skyChange = document.querySelector("#sky");
+        skyChange.innerHTML = `${response.data.weather[0].description}`;
+
         //icon
         let weatherIcon= document.querySelector("#large-image")
         weatherIcon.setAttribute("src" ,`https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
@@ -208,3 +221,6 @@ formatPlaceDefault();
 
     let locationForm = document.querySelector("#search-location");
     locationForm.addEventListener("click",getLocation);
+
+
+    

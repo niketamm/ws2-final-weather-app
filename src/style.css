@@ -35,3 +35,7 @@ div {
 .inputBtn:hover {
   background-color: yellow;
 }
+
+.skyB {
+  text-transform: capitalize;
+}
