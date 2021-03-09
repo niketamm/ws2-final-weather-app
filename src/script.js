@@ -95,7 +95,7 @@ time.innerHTML = timeFunction();
 
         //icon
         let weatherIcon= document.querySelector("#large-image")
-        weatherIcon.setAttribute("src" ,`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+        weatherIcon.setAttribute("src" ,`https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     
         //broken icon
         let weatherBroken= document.querySelector("#large-image")
@@ -144,7 +144,7 @@ formatPlaceDefault();
 
         //icon
         let weatherIcon= document.querySelector("#large-image")
-        weatherIcon.setAttribute("src" ,`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+        weatherIcon.setAttribute("src" ,`https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 
         //broken icon
         let weatherBroken= document.querySelector("#large-image")
@@ -199,7 +199,7 @@ formatPlaceDefault();
 
         //icon
         let weatherIcon= document.querySelector("#large-image")
-        weatherIcon.setAttribute("src" ,`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+        weatherIcon.setAttribute("src" ,`https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 
         //broken icon
         let weatherBroken= document.querySelector("#large-image")
