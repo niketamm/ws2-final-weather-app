@@ -15,6 +15,10 @@ body {
   border-radius: 1.25rem;
 }
 
+.right {
+  text-align: right;
+}
+
 div {
   display: inline;
 }
@@ -38,4 +42,8 @@ div {
 
 .skyB {
   text-transform: capitalize;
+}
+
+.degree-today {
+  font-size: 30px;
 }
