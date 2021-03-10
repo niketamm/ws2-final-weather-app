@@ -95,19 +95,26 @@ function dataWeather(response)
         //change background according to weather using icon code
         let background= document.querySelector("#background")
         let color1= null;
+        let color2= null;
         let iconCode=response.data.weather[0].icon;
-        if  (iconCode === "01d" || iconCode === "01n"){color1=`#7DB9DE`;}
-        else if (iconCode === "02d" || iconCode === "02n"){color1=`#77969A`;}
-        else if (iconCode === "03d" || iconCode === "03n"){color1=`#787878`;}
-        else if (iconCode === "04d" || iconCode === "04n"){color1=`#4F4F48`;}
-        else if (iconCode === "09d" || iconCode === "09n"){color1=`#0F2540`;}
-        else if (iconCode === "10d" || iconCode ==="10n"){color1=`#72636E`;}
-        else if (iconCode === "11d" || iconCode ==="11n"){color1=`#897D55`;}
-        else if (iconCode === "13d" || iconCode ==="13n"){color1=`#FCFAF2`;}
-        else if (iconCode === "50d" || iconCode ==="50n"){color1=`#986DB`;};  
+        if  (iconCode === "01d" || iconCode === "01n"){color1=`#7DB9DE`; color2=`#FAD689`;}
+        else if (iconCode === "02d" || iconCode === "02n"){color1=`#77969A`;color2=`#FAD689`;}
+        else if (iconCode === "03d" || iconCode === "03n"){color1=`#787878`;color2=`#FFFFFB`;}
+        else if (iconCode === "04d" || iconCode === "04n"){color1=`#4F4F48`;color2=`#BDC0BA`;}
+        else if (iconCode === "09d" || iconCode === "09n"){color1=`#0F2540`;color2=`#BDC0BA`;}
+        else if (iconCode === "10d" || iconCode ==="10n"){color1=`#72636E`;color2=`#BDC0BA`;}
+        else if (iconCode === "11d" || iconCode ==="11n"){color1=`#897D55`;color2=`#FAD689`;}
+        else if (iconCode === "13d" || iconCode ==="13n"){color1=`#FCFAF2`;color2=`#A5DEE4`;}
+        else if (iconCode === "50d" || iconCode ==="50n"){color1=`#77969A`;color2=`#6A8372`;};  
     
-        let cssBackground= (`<style> body {
-        background-color: ${color1};} </style>`);
+        let cssBackground= (`
+            <style> 
+            body {
+            background-image: linear-gradient(180deg,
+            ${color1} 0%,
+            ${color2} 100%);} 
+            </style>
+    `   );
         background.innerHTML=cssBackground;
 
 
