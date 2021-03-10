@@ -59,8 +59,7 @@ dateoutput.innerHTML = formatDate();
 
 //output for seaerched city/button response
 function dataWeather(response)
-    {  console.log(response.data);
-        //for city
+    {    //for city
         let htmlCityValue = response.data.name;
         let htmlCity = document.querySelector("#city");
         htmlCity.innerHTML = htmlCityValue;
@@ -90,8 +89,29 @@ function dataWeather(response)
         skyChange.innerHTML = `${response.data.weather[0].description}`;
 
         //icon
-        let weatherIcon= document.querySelector("#large-image")
+        let weatherIcon= document.querySelector("#large-image");
         weatherIcon.setAttribute("src" ,`https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+
+        //change background according to weather using icon code
+        let background= document.querySelector("#background")
+        let color1= null;
+        let iconCode=response.data.weather[0].icon;
+        if  (iconCode === "01d" || iconCode === "01n"){color1=`#7DB9DE`;}
+        else if (iconCode === "02d" || iconCode === "02n"){color1=`#77969A`;}
+        else if (iconCode === "03d" || iconCode === "03n"){color1=`#787878`;}
+        else if (iconCode === "04d" || iconCode === "04n"){color1=`#4F4F48`;}
+        else if (iconCode === "09d" || iconCode === "09n"){color1=`#0F2540`;}
+        else if (iconCode === "10d" || iconCode ==="10n"){color1=`#72636E`;}
+        else if (iconCode === "11d" || iconCode ==="11n"){color1=`#897D55`;}
+        else if (iconCode === "13d" || iconCode ==="13n"){color1=`#FCFAF2`;}
+        else if (iconCode === "50d" || iconCode ==="50n"){color1=`#986DB`;};  
+    
+        let cssBackground= (`<style> body {
+        background-color: ${color1};} </style>`);
+        background.innerHTML=cssBackground;
+
+
+
 
         //broken icon
         let weatherBroken= document.querySelector("#large-image")
@@ -159,6 +179,17 @@ function convertTemperature(event)
 
     let convert = document.querySelector("#Convert");
     convert.addEventListener("click", convertTemperature);
+
+    function convertTemperatureBack(event)
+    {   event.preventDefault();
+        let temperatureImperical= celsius;
+         let temperature = document.querySelector("#degree-today");
+        temperature.innerHTML = `${Math.round(temperatureImperical)}°C`;
+    }
+
+    let convertBack = document.querySelector("#ConvertBack");
+    convertBack.addEventListener("click", convertTemperatureBack);
+
 
 
 formatPlace("tokyo") ;
