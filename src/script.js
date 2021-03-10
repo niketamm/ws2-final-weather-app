@@ -61,7 +61,7 @@ time.innerHTML = timeFunction();
 
 //output for seaerched city/button response
 function dataWeather(response)
-    {
+    {  console.log(response.data);
         //for city
         let htmlCityValue = response.data.name;
         let htmlCity = document.querySelector("#city");
@@ -82,7 +82,7 @@ function dataWeather(response)
         let windChange = document.querySelector("#wind-speed");
         windChange.innerHTML = `Wind speed ${windRound} m/s`;
 
-        //sky
+        //sky description
         let skyChange = document.querySelector("#sky");
         skyChange.innerHTML = `${response.data.weather[0].description}`;
 
