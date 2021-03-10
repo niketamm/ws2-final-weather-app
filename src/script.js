@@ -109,10 +109,16 @@ function dataWeather(response)
     
         let cssBackground= (`
             <style> 
-            body {
-            background-image: linear-gradient(180deg,
-            ${color1} 0%,
-            ${color2} 100%);} 
+            .body {
+            background-image: radial-gradient(circle,
+            ${color2} 0%,
+            ${color1} 100%);} 
+
+            .bodyBottom {
+                background-color:${color1};}
+            .bodySearch
+            {
+                background-color:${color2};}
             </style>
     `   );
         background.innerHTML=cssBackground;

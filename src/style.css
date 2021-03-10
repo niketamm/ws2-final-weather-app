@@ -1,13 +1,31 @@
 body {
-  font-family: "EB Garamond", serif;
-}
-
-.body {
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0.4) 0%,
     rgba(255, 255, 255, 0.6) 100%
   );
+  font-family: "EB Garamond", serif;
+}
+
+.body {
+  display: block;
+  margin: 50px;
+  padding: 20px;
+  border-radius: 1.25rem;
+  max-width: 600px;
+  min-width: 50%;
+}
+
+.bodyBottom {
+  display: block;
+  margin: 50px;
+  padding: 20px;
+  border-radius: 1.25rem;
+  max-width: 600px;
+  min-width: 50%;
+}
+
+.bodySearch {
   display: block;
   margin: 50px;
   padding: 20px;
