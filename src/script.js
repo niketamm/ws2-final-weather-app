@@ -59,7 +59,10 @@ dateoutput.innerHTML = formatDate();
 
 //output for seaerched city/button response
 function dataWeather(response)
-    {    //for city
+
+    {     console.log(response)
+        
+        //for city
         let htmlCityValue = response.data.name;
         let htmlCity = document.querySelector("#city");
         htmlCity.innerHTML = htmlCityValue;
@@ -67,17 +70,15 @@ function dataWeather(response)
         //degree in celsius
         //celsius outside of function
         celsius = response.data.main.temp;
-        //let metric=`°C`
-        //let imperical=`°F`
         let tempChange = document.querySelector("#degree-today");
         tempChange.innerHTML = (`${Math.round(celsius)}°C`);
 
-        
 
         //humidity
         let humRound = Math.round(response.data.main.humidity);
         let humChange = document.querySelector("#humidity");
         humChange.innerHTML = `Humidity ${humRound} %`;
+
 
         //windspeedS
         let windRound = response.data.wind.speed;
