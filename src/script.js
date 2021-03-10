@@ -66,15 +66,14 @@ function dataWeather(response)
         htmlCity.innerHTML = htmlCityValue;
 
         //degree in celsius
-        let celsius = response.data.main.temp;
+        //celsius outside of function
+        celsius = response.data.main.temp;
         //let metric=`°C`
         //let imperical=`°F`
         let tempChange = document.querySelector("#degree-today");
         tempChange.innerHTML = (`${Math.round(celsius)}°C`);
 
         
-
-       // (${response.data.main.temp} * (9/5)) + 32
 
         //humidity
         let humRound = Math.round(response.data.main.humidity);
@@ -140,11 +139,26 @@ function dataWeather(response)
     }
     
     let searchForm = document.querySelector("#searchEngine,#search-button");
-    searchForm.addEventListener("submit",searchValue);
+    searchForm.addEventListener("submit", searchValue);
 
 //output for current location
 
     let locationForm = document.querySelector("#search-location");
-    locationForm.addEventListener("click",getLocation);
+    locationForm.addEventListener("click", getLocation);
+//converting C to F
+//making celsius null to prevent F from calculating endlessly
 
-    formatPlace("tokyo") ;
+let celsius=null;
+
+function convertTemperature(event)
+    {   event.preventDefault();
+        let temperatureImperical= (celsius * 9/5) + 32;
+         let temperature = document.querySelector("#degree-today");
+        temperature.innerHTML = `${Math.round(temperatureImperical)}°F`;
+    }
+
+    let convert = document.querySelector("#Convert");
+    convert.addEventListener("click", convertTemperature);
+
+
+formatPlace("tokyo") ;
