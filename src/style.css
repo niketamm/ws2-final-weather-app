@@ -4,13 +4,13 @@ body {
     rgba(255, 255, 255, 0.4) 0%,
     rgba(255, 255, 255, 0.6) 100%
   );
-  font-family: "EB Garamond", serif;
+  font-family: "Anton", sans-serif;
 }
 
 .body {
   display: block;
-  margin: 50px;
-  padding: 20px;
+  margin: 40px auto;
+  padding: 50px;
   border-radius: 1.25rem;
   max-width: 600px;
   min-width: 50%;
@@ -18,7 +18,7 @@ body {
 
 .bodyBottom {
   display: block;
-  margin: 50px;
+  margin: 50px auto;
   padding: 20px;
   border-radius: 1.25rem;
   max-width: 600px;
@@ -27,7 +27,7 @@ body {
 
 .bodySearch {
   display: block;
-  margin: 50px;
+  margin: 50px auto;
   padding: 20px;
   border-radius: 1.25rem;
   max-width: 600px;
@@ -48,7 +48,6 @@ div {
     rgba(255, 255, 255, 0.4) 0%,
     rgba(255, 255, 255, 0.6) 100%
   );
-  font-family: "EB Garamond", serif;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
   box-shadow: none;
