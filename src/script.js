@@ -40,10 +40,9 @@
 
 //adding time
 
-    let time = document.querySelector("#time");
-        function timeFunction() 
+        function timeFunction(timestamp) 
         {
-            let now = new Date();
+            let now = new Date(timestamp);
             let hour = now.getHours();
                 if (hour < 10) 
                 {hour=`0${hour}`};
@@ -55,7 +54,6 @@
         }
 //output of date and time
 dateoutput.innerHTML = formatDate();
-time.innerHTML = timeFunction();
 
     
 
@@ -68,16 +66,22 @@ function dataWeather(response)
         htmlCity.innerHTML = htmlCityValue;
 
         //degree in celsius
-        let tempRound = Math.round(response.data.main.temp);
+        let celsius = response.data.main.temp;
+        //let metric=`°C`
+        //let imperical=`°F`
         let tempChange = document.querySelector("#degree-today");
-        tempChange.innerHTML = (`${tempRound}℃`);
+        tempChange.innerHTML = (`${Math.round(celsius)}°C`);
+
+        
+
+       // (${response.data.main.temp} * (9/5)) + 32
 
         //humidity
         let humRound = Math.round(response.data.main.humidity);
         let humChange = document.querySelector("#humidity");
         humChange.innerHTML = `Humidity ${humRound} %`;
 
-        //windspeed
+        //windspeedS
         let windRound = response.data.wind.speed;
         let windChange = document.querySelector("#wind-speed");
         windChange.innerHTML = `Wind speed ${windRound} m/s`;
@@ -93,6 +97,10 @@ function dataWeather(response)
         //broken icon
         let weatherBroken= document.querySelector("#large-image")
         weatherBroken.setAttribute("alt" ,`${response.data.weather[0].description}`);
+
+        //time updated
+        let timeUpdate= document.querySelector("#time")
+        timeUpdate.innerHTML=timeFunction(response.data.dt*1000);
     }
     
 
